@@ -10,10 +10,67 @@
   &__nav {
     display: flex;
     align-items: center;
+    @media (max-width: 935px) {
+      position: fixed;
+      display: block;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      background-color: $blue;
+      /* color: #fff; */
+      top: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: opacity 0.3s;
+      padding-top: 80px;
+      min-height: 100vh;
+    }
+    &.active {
+      opacity: 1;
+      z-index: 5;
+      .productly__nav-item {
+        pointer-events: all;
+        -webkit-transform: translate(0);
+        transform: translate(0);
+      }
+      .btn-signin {
+        color: #fff;
+      }
+    }
+    .btn.close {
+      display: none;
+      position: absolute;
+      top: 15px;
+      right: -10px;
+      font-size: 40px;
+      width: 100px;
+      color: #fff;
+      font-size: 35px;
+      padding-right: 40px;
+      padding-left: 0;
+      @media (max-width: 935px) {
+        display: inline-block;
+      }
+    }
     &-item {
       text-decoration: none;
       color: $black;
       margin-left: 30px;
+      @media (max-width: 935px) {
+        width: 100%;
+        display: block;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        font-size: 30px;
+        pointer-events: none;
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+        -webkit-transition: 0.2s ease 0.1s;
+        transition: 0.2s ease 0.1s;
+        margin-left: 0;
+      }
     }
     .btn {
       font-weight: 600;
@@ -25,6 +82,18 @@
       &-signup {
         margin-left: 15px;
       }
+    }
+  }
+  .mobile-hamburger {
+    display: none;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    outline: none;
+    cursor: pointer;
+    color: #000964;
+    @media (max-width: 935px) {
+      display: inline-block;
     }
   }
   &__main {
@@ -200,6 +269,9 @@
     }
     &-img {
       justify-self: right;
+      img{
+        width: 100%;
+      }
       @media (max-width: 1000px) {
         order: -1;
         justify-self: center;
@@ -353,6 +425,7 @@
         font-size: 16px;
         padding: 10px 14px;
         margin-bottom: 20px;
+        border: 1px solid #BCD0E5;
         &::placeholder {
           color: #bcd0e5;
         }

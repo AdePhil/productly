@@ -2,13 +2,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import "./home.scss";
+import { useState } from "react";
 const Home = () => {
+  const [active, setActive] = useState(false);
   return (
     <div className="productly">
       <header className="productly__header container">
         <img src="./logo.svg" alt="Productly Logo" className="logo" />
 
-        <nav className="productly__nav">
+        <nav className={active ? 'productly__nav active' : 'productly__nav'}>
           <a href="#" className="productly__nav-item">
             Products
           </a>
@@ -21,13 +23,19 @@ const Home = () => {
           <a href="#" className="productly__nav-item">
             Resources
           </a>
-          <a href="#" className="btn btn--border btn-signin">
-            Sign In
-          </a>
-          <a href="#" className="btn btn--orange btn-signup">
-            Sign Up
-          </a>
+          <div className="btn-wrapper productly__nav-item">
+            <a href="#" className="btn btn--border btn-signin">
+              Sign In
+            </a>
+            <a href="#" className="btn btn--orange btn-signup">
+              Sign Up
+            </a>
+          </div>
+          <button aria-label="close mobile nav" class="btn close" onClick={() => setActive(!active)}>
+            ×
+          </button>
         </nav>
+        <button class="mobile-hamburger btn" onClick={() => setActive(!active)}>☰</button>
       </header>
       <main className="productly__main container">
         <div className="productly__main-text">
