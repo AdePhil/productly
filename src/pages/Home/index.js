@@ -10,17 +10,14 @@ const Home = () => {
       <header className="productly__header container">
         <img src="./logo.svg" alt="Productly Logo" className="logo" />
 
-        <nav className={active ? 'productly__nav active' : 'productly__nav'}>
-          <a href="#" className="productly__nav-item">
+        <nav className={active ? "productly__nav active" : "productly__nav"}>
+          <a href="#products" className="productly__nav-item">
             Products
           </a>
-          <a href="#" className="productly__nav-item">
+          <a href="#customers" className="productly__nav-item">
             Customers
           </a>
-          <a href="#" className="productly__nav-item">
-            Pricing
-          </a>
-          <a href="#" className="productly__nav-item">
+          <a href="#resources" className="productly__nav-item">
             Resources
           </a>
           <div className="btn-wrapper productly__nav-item">
@@ -31,11 +28,17 @@ const Home = () => {
               Sign Up
             </a>
           </div>
-          <button aria-label="close mobile nav" class="btn close" onClick={() => setActive(!active)}>
+          <button
+            aria-label="close mobile nav"
+            class="btn close"
+            onClick={() => setActive(!active)}
+          >
             ×
           </button>
         </nav>
-        <button class="mobile-hamburger btn" onClick={() => setActive(!active)}>☰</button>
+        <button class="mobile-hamburger btn" onClick={() => setActive(!active)}>
+          ☰
+        </button>
       </header>
       <main className="productly__main container">
         <div className="productly__main-text">
@@ -812,7 +815,7 @@ const Home = () => {
           </svg>
         </div>
       </main>
-      <section className="productly__features">
+      <section className="productly__features" id="products">
         <h2 className="productly__features-heading">
           We design tools to unveil your superpowers
         </h2>
@@ -943,7 +946,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="productly__testimonials">
+      <section className="productly__testimonials" id="customers">
         <div className="productly__testimonials-container container">
           <div className="productly__testimonials-text">
             <h2>Need a super hero?</h2>
@@ -987,7 +990,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="productly__blogs">
+      <section className="productly__blogs" id="resources">
         <div className="container">
           <h2 className="productly__blogs-heading">Marketing Strategies</h2>
           <p className="productly__blogs-sub-heading">

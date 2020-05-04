@@ -1,4 +1,7 @@
 @import "../../variables.scss";
+html {
+  scroll-behavior: smooth;
+}
 .productly {
   &__header {
     padding-top: 20px;
